@@ -4,10 +4,10 @@
 #include <time.h>
 #include <sys/time.h>
 
-#include "sdk/httpapi.h"
+#include "httpapi.h"
 #include "iot_logging.h"
 
-#include "AzureIoTHubClient.h"
+#include <AzureIoTHub.h>
 #include "util/HTTPSClient.h"
 
 

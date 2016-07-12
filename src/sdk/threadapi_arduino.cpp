@@ -3,7 +3,7 @@
 
 #include "Arduino.h"
 
-#include "sdk/threadapi.h"
+#include "threadapi.h"
 
 void ThreadAPI_Sleep(unsigned int milliseconds)
 {
