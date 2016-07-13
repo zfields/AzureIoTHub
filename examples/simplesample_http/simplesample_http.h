@@ -7,9 +7,9 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-
-    void simplesample_http_run(void);
-
+    void simplesample_http_setup(void);
+    void simplesample_http_send_model_to_azure(void);
+    void simplesample_http_background_work(void);
 #ifdef __cplusplus
 }
 #endif

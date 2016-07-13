@@ -5,6 +5,8 @@
 
 #include "simplesample_http.h"
 
+int referenceTime = 0;
+
 void setup() {
     // Initialize serial and wait for port to open
     Serial.begin(9600);
@@ -17,10 +19,18 @@ void setup() {
     while (!Serial); // wait for serial port to connect. Needed for native USB port only
 
     // Invoke the AzureIoTHubClient Loop
-    simplesample_http_run();
+    simplesample_http_setup();
 }
 
 void loop() {
-  // never called, the sample creates its own loop
+    int loopTime = millis();
+    
+    if ((loopTime - referenceTime) > 1000) {
+        referenceTime = loopTime;
+        simplesample_http_send_model_to_azure();
+    }
+    
+    delay(100);
+    simplesample_http_background_work();
 }
 
